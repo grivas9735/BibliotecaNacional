@@ -1,8 +1,8 @@
-﻿using AutoMapper;
-using Biblioteca_Common.DTO;
+﻿using System;
+using AutoMapper;
+using Biblioteca_DAL.Model;
 using Biblioteca_Implementations.BussinesLogic;
 using Biblioteca_Implementations.Repository;
-using System.Collections.Generic;
 
 namespace Biblioteca_BussinesLogic.BL
 {
@@ -15,24 +15,54 @@ namespace Biblioteca_BussinesLogic.BL
             UnitOfWork = _uow;
         }
 
-        public void Add(DTOPrestacion lector)
+        /// <summary>
+        /// Devuelve 'true' si se pudo retirar el libro. Devuelve 'false' si el libro no está disponible 
+        /// </summary>
+        /// <param name="lectorId"></param>
+        /// <param name="libroId"></param>
+        /// <returns></returns>
+        public void RetirarLibro(int lectorId, int libroId)
         {
-            throw new System.NotImplementedException();
+            if (UnitOfWork.Libro.Get(libroId) == null)
+                throw new Exception($"El libro {libroId} no existe");
+
+            if (UnitOfWork.Lector.Get(lectorId) == null)
+                throw new Exception($"El lector {lectorId} no existe");
+
+            if (!UnitOfWork.Libro.Disponible(libroId))
+                throw new Exception($"El libro {libroId} no esta disponible");
+
+            UnitOfWork.Prestacion.Add(new Prestacion
+            {
+                LectorId = lectorId,
+                LibroId = libroId,
+                FechaRetiro = DateTime.Now
+            });
+
+            UnitOfWork.Save();
         }
 
-        public DTOPrestacion Get(int id)
+        /// <summary>
+        /// Devuelve un libro. Lanza excepcion si el libro nunca fue prestado al lector
+        /// </summary>
+        /// <param name="lectorId"></param>
+        /// <param name="libroId"></param>
+        public void DevolverLibro(int lectorId, int libroId)
         {
-            throw new System.NotImplementedException();
-        }
+            if (UnitOfWork.Libro.Disponible(libroId))
+                throw new Exception($"El libro {libroId} no esta prestado");
 
-        public IEnumerable<DTOPrestacion> GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+            var prestacion = UnitOfWork.Prestacion.GetByLectorLibro(lectorId, libroId);
 
-        public void Remove(int id)
-        {
-            throw new System.NotImplementedException();
+            if (prestacion == null)
+                throw new Exception($"El libro {libroId} nunca fue prestado al lector {lectorId}");
+
+            if (prestacion.FechaDevolucion != null)
+                throw new Exception($"El libro {libroId} ya fue devuelto por el lector {lectorId}");
+
+            prestacion.FechaDevolucion = DateTime.Now;
+            UnitOfWork.Prestacion.Update(prestacion);
+            UnitOfWork.Save();
         }
     }
 }

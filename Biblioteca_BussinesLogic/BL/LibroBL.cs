@@ -15,6 +15,18 @@ namespace Biblioteca_BussinesLogic.BL
             UnitOfWork = _uow;
         }
 
+        public IEnumerable<DTOLibro> GetDisponibles()
+        {
+            var disponibles = UnitOfWork.Libro.GetDisponibles();
+            return Mapper.Map<IEnumerable<DTOLibro>>(disponibles);
+        }
+
+        public IEnumerable<DTOLibro> GetPrestados()
+        {
+            var prestados = UnitOfWork.Libro.GetPrestados();
+            return Mapper.Map<IEnumerable<DTOLibro>>(prestados);
+        }
+
         public void Add(DTOLibro lector)
         {
             throw new System.NotImplementedException();

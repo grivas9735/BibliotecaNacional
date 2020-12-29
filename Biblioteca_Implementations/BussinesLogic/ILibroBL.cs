@@ -9,5 +9,8 @@ namespace Biblioteca_Implementations.BussinesLogic
         IEnumerable<DTOLibro> GetAll();
         void Add(DTOLibro lector);
         void Remove(int id);
+
+        IEnumerable<DTOLibro> GetDisponibles();
+        IEnumerable<DTOLibro> GetPrestados();
     }
 }

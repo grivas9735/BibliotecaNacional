@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaAPI", "BibliotecaAPI\BibliotecaAPI.csproj", "{2DEF17F0-8A0C-49CF-846B-B1E3739389D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_DataAccess", "Biblioteca_DAL\Biblioteca_DataAccess.csproj", "{1ABFEDA9-C741-4062-8252-9129F6CA23CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_DataAccess", "Biblioteca_DAL\Biblioteca_DataAccess.csproj", "{1ABFEDA9-C741-4062-8252-9129F6CA23CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Common", "Biblioteca_Common\Biblioteca_Common.csproj", "{9B8FC220-4155-440E-96EF-4AE6A1102F80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_Common", "Biblioteca_Common\Biblioteca_Common.csproj", "{9B8FC220-4155-440E-96EF-4AE6A1102F80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_BussinesLogic", "Biblioteca_BussinesLogic\Biblioteca_BussinesLogic.csproj", "{212CFFDE-4269-45A1-958C-6E4C4BE2FD7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_BussinesLogic", "Biblioteca_BussinesLogic\Biblioteca_BussinesLogic.csproj", "{212CFFDE-4269-45A1-958C-6E4C4BE2FD7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Implementations", "Biblioteca_Implementations\Biblioteca_Implementations.csproj", "{4EC14239-4A3A-4A5D-8681-24030958BED5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_Implementations", "Biblioteca_Implementations\Biblioteca_Implementations.csproj", "{4EC14239-4A3A-4A5D-8681-24030958BED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Repository", "Biblioteca_Repository\Biblioteca_Repository.csproj", "{4893E5AD-0581-4977-AD32-6BCC63EBB6E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_Repository", "Biblioteca_Repository\Biblioteca_Repository.csproj", "{4893E5AD-0581-4977-AD32-6BCC63EBB6E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Extensions", "Biblioteca_Extensions\Biblioteca_Extensions.csproj", "{3DC649B5-E9EE-45ED-AC37-AE399E8B837D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4893E5AD-0581-4977-AD32-6BCC63EBB6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4893E5AD-0581-4977-AD32-6BCC63EBB6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4893E5AD-0581-4977-AD32-6BCC63EBB6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC649B5-E9EE-45ED-AC37-AE399E8B837D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC649B5-E9EE-45ED-AC37-AE399E8B837D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC649B5-E9EE-45ED-AC37-AE399E8B837D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC649B5-E9EE-45ED-AC37-AE399E8B837D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

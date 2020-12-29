@@ -1,8 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Biblioteca_Common.DTO;
+using Biblioteca_DAL.Model;
 using Biblioteca_Implementations.BussinesLogic;
 using Biblioteca_Implementations.Repository;
-using System.Collections.Generic;
 
 namespace Biblioteca_BussinesLogic.BL
 {
@@ -15,24 +16,34 @@ namespace Biblioteca_BussinesLogic.BL
             UnitOfWork = _uow;
         }
 
-        public void Add(DTOAutor lector)
+        public void Add(DTOAutor autor)
         {
-            throw new System.NotImplementedException();
+            UnitOfWork.Autor.Add(Mapper.Map<Autor>(autor));
+            UnitOfWork.Save();
         }
 
         public DTOAutor Get(int id)
         {
-            throw new System.NotImplementedException();
+            var autor = UnitOfWork.Autor.Get(id);
+            return Mapper.Map<DTOAutor>(autor);
         }
 
         public IEnumerable<DTOAutor> GetAll()
         {
-            throw new System.NotImplementedException();
+            var autores = UnitOfWork.Autor.GetAll();
+            return Mapper.Map<IEnumerable<DTOAutor>>(autores);
+        }
+
+        public IEnumerable<DTOLibro> GetLibros(int id)
+        {
+            var libros = UnitOfWork.Libro.GetByAutor(id);
+            return Mapper.Map<IEnumerable<DTOLibro>>(libros);
         }
 
         public void Remove(int id)
         {
-            throw new System.NotImplementedException();
+            UnitOfWork.Autor.Remove(id);
+            UnitOfWork.Save();
         }
     }
 }
