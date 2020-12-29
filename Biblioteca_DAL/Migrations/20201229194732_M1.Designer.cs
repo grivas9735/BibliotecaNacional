@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Biblioteca_DataAccess.Migrations
 {
     [DbContext(typeof(BibliotecaDBContext))]
-    [Migration("20201229191204_M1")]
+    [Migration("20201229194732_M1")]
     partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,7 +160,7 @@ namespace Biblioteca_DataAccess.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<DateTime>("FechaDevolucion")
+                    b.Property<DateTime?>("FechaDevolucion")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("FechaRetiro")

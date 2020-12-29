@@ -6,8 +6,8 @@ using Biblioteca_Common.DTO;
 
 namespace BibliotecaAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class LectorController : Controller
     {
         private readonly ILectorBL lectorBL;

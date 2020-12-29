@@ -109,7 +109,7 @@ namespace Biblioteca_DataAccess.Migrations
                     LibroId = table.Column<int>(type: "int", nullable: false),
                     LectorId = table.Column<int>(type: "int", nullable: false),
                     FechaRetiro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FechaDevolucion = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    FechaDevolucion = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {

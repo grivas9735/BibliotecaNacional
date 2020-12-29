@@ -158,7 +158,7 @@ namespace Biblioteca_DataAccess.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<DateTime>("FechaDevolucion")
+                    b.Property<DateTime?>("FechaDevolucion")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("FechaRetiro")

@@ -18,7 +18,7 @@ namespace Biblioteca_DAL.Model
 
         public DateTime FechaRetiro { get; set; }
 
-        public DateTime FechaDevolucion { get; set; }
+        public DateTime? FechaDevolucion { get; set; }
 
         public Libro Libro { get; set; }
 
