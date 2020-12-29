@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca_DAL\Biblioteca_DataAccess.csproj" />
+    <ProjectReference Include="..\Biblioteca_Implementations\Biblioteca_Implementations.csproj" />
+  </ItemGroup>
+
+</Project>
