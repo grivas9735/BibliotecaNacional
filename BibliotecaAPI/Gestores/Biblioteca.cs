@@ -11,16 +11,16 @@ namespace BibliotecaAPI.Gestores
             LibroId = libroId;
         }
 
-        public int LectorId { get; set; }
+        public int LectorId { get; }
 
-        public int LibroId { get; set; }
+        public int LibroId { get; }
     }
 
     public class Biblioteca
     {
         private static Biblioteca biblioteca;
 
-        private IList<Suscription> Suscribers;
+        private readonly IList<Suscription> Suscribers;
 
         private Biblioteca() 
         {
