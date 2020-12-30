@@ -2,7 +2,7 @@
 {
     public interface IPrestacionBL
     {
-        void RetirarLibro(int lectorId, int libroId);
+        bool RetirarLibro(int lectorId, int libroId);
         void DevolverLibro(int lectorId, int libroId);
     }
 }

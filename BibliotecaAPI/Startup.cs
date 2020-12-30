@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using AutoMapper;
 using BibliotecaAPI.DependencyInjection;
 using Biblioteca_Repository;
+using BibliotecaAPI.Controllers;
 
 namespace BibliotecaAPI
 {

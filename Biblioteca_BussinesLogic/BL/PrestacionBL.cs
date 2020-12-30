@@ -21,7 +21,7 @@ namespace Biblioteca_BussinesLogic.BL
         /// <param name="lectorId"></param>
         /// <param name="libroId"></param>
         /// <returns></returns>
-        public void RetirarLibro(int lectorId, int libroId)
+        public bool RetirarLibro(int lectorId, int libroId)
         {
             if (UnitOfWork.Libro.Get(libroId) == null)
                 throw new Exception($"El libro {libroId} no existe");
@@ -30,7 +30,7 @@ namespace Biblioteca_BussinesLogic.BL
                 throw new Exception($"El lector {lectorId} no existe");
 
             if (!UnitOfWork.Libro.Disponible(libroId))
-                throw new Exception($"El libro {libroId} no esta disponible");
+                return false;
 
             UnitOfWork.Prestacion.Add(new Prestacion
             {
@@ -40,6 +40,7 @@ namespace Biblioteca_BussinesLogic.BL
             });
 
             UnitOfWork.Save();
+            return true;
         }
 
         /// <summary>
